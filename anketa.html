@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+ <link href="../resume/css/ui-lightness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+ <script src="../resume/js/jquery-1.8.0.js"></script>
+ <script src="../resume/js/task.js"></script>
+ <script src="../resume/js/jquery-ui-1.8.23.custom.min.js"></script>
+ <script src="js/jquery.validate.min.js"></script>
+ <script>$(function(){
+ $( "#accordion" ).accordion({ active: 2 });
+ 
+ 
+ $("#commentForm").validate({
+rules: {
+city: "required",
+university: "required",
+time: "required",
+experience : "required",
+username: {
+required: true,
+minlength: 2
+},
+y_of_birth:{
+required: true,
+digits: true,
+minlength: 4,
+maxlength: 4
+},
+grad_year:{
+required: true,
+digits: true,
+minlength: 4,
+maxlength: 4
+},
+task1 : {
+required: true,
+url : true
+},
+task2 : {
+required: true,
+url : true
+},
+task3 : {
+required: true,
+url : true
+},
+password: {
+required: true,
+minlength: 5
+},
+confirm_password: {
+required: true,
+minlength: 5,
+equalTo: "#password"
+},
+email: {
+required: true,
+email: true
+},
+topic: {
+required: "#newsletter:checked",
+minlength: 2
+},
+agree: "required"
+},
+messages: {
+city: "Пожалуйста, введите город",
+university: "Пожалуйста, введите название вуза",
+time: "Пожалуйста, введите доступное время для стажировки",
+experience: "Пожалуйстаб опишите опыт разработки",
+username: {
+required: "Please enter a username",
+minlength: "Your username must consist of at least 2 characters"
+},
+password: {
+required: "Please provide a password",
+minlength: "Your password must be at least 5 characters long"
+},
+y_of_birth: {
+required: "Пожалуйста, заполните дату рождения",
+digits: "Используйте числовые символы",
+minlength: "Дата рождения должна содержать не меньше 4-рех знаков",
+maxlength: "Дата рождения должна содержать не больше 4-рех знаков"
+},
+grad_year: {
+required: "Пожалуйста, заполните год окончания вуза",
+digits: "Используйте числовые символы",
+minlength: "Год окончания должен содержать не меньше 4-рех знаков",
+maxlength: "Год окончания должен содержать не больше 4-рех знаков"
+},
+task1: {
+required: "Пожалуйста, введите ссылку",
+url: "Введите правильный формат ссылки"
+},
+task2: {
+required: "Пожалуйста, введите ссылку",
+url: "Введите правильный формат ссылки"
+},
+task3: {
+required: "Пожалуйста, введите ссылку",
+url: "Введите правильный формат ссылки"
+},
+confirm_password: {
+required: "Please provide a password",
+minlength: "Your password must be at least 5 characters long",
+equalTo: "Please enter the same password as above"
+},
+email: "Please enter a valid email address",
+agree: "Please accept our policy"
+}
+}); 
+
+
+}); 
+ </script>
+</head>
+<body>
+<form id="commentForm" action="" method="post">
+<div id="accordion">
+<h3>Вопрос 1</h3>
+<div>
+
+<p>
+  <label for="y_of_birth">Год рождения</label>
+  <input type="text"  name="y_of_birth" id="y_of_birth">
+</p>
+
+</div>
+<h3>Вопрос 2</h3>
+<div>
+<p>
+  <label for="city">Город, в котором вы живете</label>
+  <input type="text"  name="city" id="city">
+</p>
+</div>
+<h3>Вопрос 3</h3>
+<div>
+<p>
+  <label for="university">Вуз, факультет, специальность, кафедра </label>
+  <input type="text"  name="university" id="university">
+</p>
+</div>
+<h3>Вопрос 4</h3>
+<div>
+<p>
+  <label for="grad_year">Год окончания вуза </label>
+  <input type="text"  name="grad_year" id="grad_year">
+</p>
+</div>
+<h3>Вопрос 5</h3>
+<div>
+<p>
+  <label for="level">	
+   Уровень владения английским языком: </label>
+  <input type="text"  name="level" id="level">
+</p>
+<p><input type="checkbox" id="a5_1" value="1" name="q5"><label for="a5_1">&nbsp;начальный;</label></p>
+<p><input type="checkbox" id="a5_1" value="1" name="q5"><label for="a5_1">&nbsp;средний;</label></p>
+<p><input type="checkbox" id="a5_1" value="1" name="q5"><label for="a5_1">&nbsp;свободное владение;</label></p>
+</div>
+<h3>Вопрос 6</h3>
+<div>
+<p>
+  <label for="expectation">Чего вы ожидаете от участия в Школе? </label>
+  <input type="text"  name="expectation" id="expectation">
+</p>
+</div>
+<h3>Вопрос 7</h3>
+<div>
+<p>
+  <label for="univer">Откуда вы о нас узнали? </label>
+  <input type="text"  name="univer" id="univer">
+</p>
+</div>
+<h3>Вопрос 8</h3>
+<div>
+<p>
+  <label for="time">	
+   Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе? </label>
+  <input type="text"  name="time" id="time">
+</p>
+</div>
+<h3>Вопрос 9</h3>
+<div>
+<p>
+  <label for="experience">Расскажите о вашем опыте разработки. Нам будет интересно всё — как серьезный интерфейс, так и просто домашняя страничка.
+  </label>
+  <input type="text"  name="experience" id="experience">
+</p>
+</div>
+<h3>Вопрос 10</h3>
+<div>
+<p>
+  <label for="work">	
+
+Если вы где-нибудь работали, расскажите, какие у вас были должностные обязанности и был ли опыт работы в команде. </label>
+  <input type="text"  name="work" id="work">
+</p>
+</div>
+<h3>Вопрос 11</h3>
+<div>
+<p>
+  <label for="program">Перечислите, какими программными продуктами вы пользуетесь в своей работе — от редактора до специализированных утилит (Intellij Idea, Node.js, Uglify.js, GNU Make). Для каждого инструмента укажите, какие задачи вы с помощью него решаете и почему выбрали именно его.
+ </label>
+  <input type="text"  name="program" id="program">
+</p>
+</div>
+<h3>Вопрос 12</h3>
+<div>
+<p>
+  <label for="command_line">Пользуетесь ли вы командной строкой? Какими командами вы пользуетесь и какие задачи вы решаете с их помощью? С какими программами вы преимущественно или полностью взаимодействуете через интерфейс командной строки?
+ </label>
+  <input type="text"  name="command_line" id="command_line">
+</p>
+</div>
+<h3>Вопрос 13</h3>
+<div>
+<p>
+  <label for="task1">	
+
+Напишите на JavaScript функцию, которая выводит список всех чисел.. </label>
+  <input type="text"  name="task1" id="task1">
+</p>
+
+</div>
+<h3>Вопрос 14</h3>
+<div>
+<p>
+  <label for="task2">Вы — пилот грузового межгалактического корабля.. </label>
+  <input type="text"  name="task2" id="task2">
+</p>
+</div>
+<h3>Вопрос 15</h3>
+<div>
+<p>
+  <label for="task3">	
+Сверстайте форму-анкету с нашими заданиями для кандидатов. </label>
+  <input type="text"  name="task3" id="task3">
+</p>
+</div>
+</div>
+</form>
+</body>
+</html>
